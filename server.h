@@ -8,12 +8,12 @@
 #define COMMS_NODE_H
 
 
-class node {
+class server {
 private:
     int port_number;
     std::string port_address;
 public:
-    explicit node(std::string addr = "localhost", int port = 8080){
+    explicit server(std::string addr = "localhost", int port = 8080){
         port_address = std::move(addr);
         port_number = port;
     }
