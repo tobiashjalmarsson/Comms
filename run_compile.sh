@@ -14,7 +14,7 @@ echo "Port: $port";
 
 if [ "$isServer" = true ]
 then
-  g++ main.cpp -o server && ./server "$address" "$port" 1
+  g++ main.cpp client.cpp server.cpp helpers.cpp -o server && ./server "$address" "$port" 1
 else
-  g++ main.cpp -o client && ./client "$address" "$port" 0
+  g++ main.cpp client.cpp server.cpp helpers.cpp -o client && ./client "$address" "$port" 0
 fi

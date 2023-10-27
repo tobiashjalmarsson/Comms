@@ -5,6 +5,7 @@
 #include <string>
 #include <utility>
 
+
 #ifndef COMMS_CLIENT_H
 #define COMMS_CLIENT_H
 
@@ -20,7 +21,7 @@ public:
     }
     void show_info();
     void set_address(std::string addr, int port);
-    void start_listen();
+    int start_listen();
 };
 
 

@@ -19,7 +19,7 @@ public:
     }
     void show_info();
     void set_address(std::string addr, int port);
-    void start_listen();
+    int start_listen();
 };
 
 

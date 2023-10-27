@@ -3,24 +3,15 @@
 #include <string>
 #include "server.h"
 #include "client.h"
+#include "helpers.h"
 
 int port;
 std::string address;
 
-void start_server(){
-    std::cout << "Starting server##" << std::endl;
-    server s = server(address, port);
-    s.start_listen();
-}
 
-void start_client(){
-    std::cout << "Starting client##" << std::endl;
-    client c = client(address, port);
-    c.start_listen();
-
-}
 
 int main(int argc, char** argv) {
+    std::string msg = get_input();
     if (argc < 4){
         std::cout << "Not enough arguments" << std::endl;
     }
@@ -33,11 +24,11 @@ int main(int argc, char** argv) {
     if (is_server){
         // Run server with inputs
         std::cout << "Running server on " << address << ":" << port << std::endl;
-        start_server();
+        start_server(address, port);
     } else {
         // Run client with inputs
         std::cout << "Running client on " << address << ":" << port << std::endl;
-        start_client();
+        start_client(address, port);
     }
 
     //server new_node = server();
