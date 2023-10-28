@@ -26,6 +26,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <fstream>
+
 
 void client::show_info() {
     std::cout << "Address: " << address << ":" << port_number << std::endl;
@@ -91,5 +93,22 @@ int client::start_listen(){
     }
 
     close(sockfd);
+    return 0;
+}
+
+/*
+ * Used for storing messages in filenames where the filename is:
+ * sendingPort_receivingPort.txt (should use full address if not local).
+ * These files will later be used for analysing so that all traffic gets
+ * to its destination.
+ * */
+int client::store_message(const std::string& message,int sender_port, int receiver_port) const
+{
+    char file_name[13];
+    std::fstream file;
+    sprintf(file_name, "%d_%d.txt", sender_port, receiver_port);
+    file.open(file_name,std::ios::app);
+    file << message << std::endl;
+    file.close();
     return 0;
 }

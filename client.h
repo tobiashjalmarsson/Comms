@@ -22,6 +22,7 @@ public:
     void show_info();
     void set_address(std::string addr, int port);
     int start_listen();
+    int store_message(const std::string& message, int sender_port, int receiver_port) const;
 };
 
 
