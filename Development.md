@@ -16,6 +16,9 @@ weight is put on points 1,2,3 from the introduction.
 
 ![alt text](./images/first_iter.png "First iteration")
 
+After the Client/Actor and Server communication is added, the next step is to add another client.
+
+![alt text](./images/second_iter.png "First iteration")
 ### Client code
 
 ### Server code
